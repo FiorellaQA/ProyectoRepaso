@@ -32,7 +32,8 @@ document.getElementById("bienvenida-registrar").addEventListener("click",functio
 	document.getElementById("inicio").style.display = "none";
 	document.getElementById("form-registro").style.display = "block";
 });
-document.getElementById("registrar").addEventListener("click",function(e){
+document.getElementById("registrar").addEventListener("click",validacionInicial);
+function validacionInicial(e){
 	e.preventDefault();
 
 	var nombre = document.getElementById("nombre").value;
@@ -53,7 +54,7 @@ document.getElementById("registrar").addEventListener("click",function(e){
 	}else{
 		indicacionesGenerales.innerHTML = "*Todos los campos son obligatorios.</br>";
 	}	
-});
+}
 
 //Aplicando la funcion camposVacios a todos los input del formulario
 var array = document.getElementsByClassName("input-registro");
@@ -99,8 +100,16 @@ function printUsuario(){
 	contraseña.innerHTML = objetoUsuario.contraseña;
 }
 document.getElementById("bt-edit").addEventListener("click",function(e){
-	alert("editando");
+	e.preventDefault();
+
+	var form_print = document.getElementById("print-usuario");
+	form_print.style.display = "none";
+	var form_editando = document.getElementById("form-registro");
+	form_editando.style.display = "block";
+
+	validacionInicial();
 });
+
 document.getElementById("bienvenida-iniciarSesion").addEventListener("click",function(e){
 	alert("chau");
 });
