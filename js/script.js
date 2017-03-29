@@ -111,5 +111,58 @@ document.getElementById("bt-edit").addEventListener("click",function(e){
 });
 
 document.getElementById("bienvenida-iniciarSesion").addEventListener("click",function(e){
-	alert("chau");
+	e.preventDefault();
+
+	document.getElementById("inicio").style.display = "none";
+	document.getElementById("inicioSesion").style.display = "block";
 });
+
+document.getElementById("inicioSe").addEventListener("click",inicio);
+
+function inicio(e){
+	e.preventDefault();
+	var email = document.getElementById("c");
+	var errorEmail = document.getElementById("messageEmail");
+	var password = document.getElementById("con");
+	var errorContraseña = document.getElementById("messageContraseña");
+	var error = document.getElementById("indicacion");
+
+	var objetoUsuario = JSON.parse(localStorage.getItem("data"));
+
+	if(email.value.length == 0 && password.value.length ==0){
+		error.innerHTML = "Los campos no deben estar vacios";
+	}else{
+		if(email.value === objetoUsuario.correo && password.value === objetoUsuario.contraseña){
+			document.getElementById("inicioSesion").style.display = "none";
+			document.getElementById("print-usuario").style.display = "block";
+			printUsuario();
+		}else{
+			document.getElementById("c").disabled = true;
+			document.getElementById("con").disabled = true;
+			document.getElementById("inicioSe").innerHTML = "Si estoy registrada";
+			document.getElementById("registrar").innerHTML = "Registrarte";
+			document.getElementById("registrar").style.display = "block";
+			
+
+			document.getElementsByClassName("bt").addEventListener("click",function(e){
+				e.preventDefault();
+							onclick = function(){
+							document.getElementById("c").disabled = false;
+							document.getElementById("con").disabled = false;
+						});
+		}
+	}
+
+
+
+	// else{
+
+	// 	document.getElementById("inicioSe").innerHTML = "Si estoy registrada";
+	// 	if()
+	// 	document.getElementById("registrar").style.display = "block";
+	// 	document.getElementById("registrar").innerHTML = "Registrarte";
+	// }
+
+
+}
+	
