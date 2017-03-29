@@ -27,7 +27,7 @@
 				<span id="messageLastname"></span>
 				<br><br>
 				<label for="correo">Correo:</label>
-				<input class="input-registro" type="text" id="correo" placeholder="Ingrese su nombre ">
+				<input class="input-registro" type="email" id="correo" placeholder="Ingrese su nombre ">
 				<span id="messageEmail"></span>	
 				<br><br>
 				<label for="contraseña">Contraseña:</label>
@@ -39,6 +39,17 @@
 			</form>
 		</div>
 	</div>
+	<div class="flex-container" id="print-usuario" style="display: none;">
+		<div class="flex-item">
+			<h1>hola!!!!!</h1>
+			<p>Nombre: <span id="nombre-usuario"></span></p>
+			<p>Apellido: <span id="apellido-usuario"></span></p>
+			<p>Correo: <span id="correo-usuario"></span></p>
+			<p>Contraseña: <span id="contraseña-usuario"></span></p>
+			<button id="bt-edit">Editar datos</button>
+		</div>
+	</div>
+		
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
