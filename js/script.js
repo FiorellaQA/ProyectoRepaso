@@ -149,20 +149,8 @@ function inicio(e){
 							onclick = function(){
 							document.getElementById("c").disabled = false;
 							document.getElementById("con").disabled = false;
-						});
+							};
+			});
 		}
 	}
-
-
-
-	// else{
-
-	// 	document.getElementById("inicioSe").innerHTML = "Si estoy registrada";
-	// 	if()
-	// 	document.getElementById("registrar").style.display = "block";
-	// 	document.getElementById("registrar").innerHTML = "Registrarte";
-	// }
-
-
 }
-	
